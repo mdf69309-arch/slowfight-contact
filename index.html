@@ -7,19 +7,21 @@
 <meta name="description" content="Contact information for the developer of the Android game Slow Fight.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700;1,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700;1,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --night: #120A2E;
-    --panel: #1D1350;
-    --ink: #ECE6F8;
-    --ink-soft: #B9AED6;
-    --amber: #FFC46B;
-    --ember: #E2506B;
+    --night: #0B0620;
+    --panel: #170F3E;
+    --panel-2: #1F1450;
+    --edge: #362A72;
+    --ink: #EDE7FB;
+    --ink-dim: #9C93C4;
+    --ember: #FF4D5E;
+    --amber: #FFB648;
     --gold: #FFD27F;
-    --green: #69F0AE;
-    --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-    --text: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --hp: #69F0AE;
+    --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+    --ui: "IBM Plex Sans", Arial, sans-serif;
   }
 
   * { box-sizing: border-box; }
@@ -29,18 +31,19 @@
     margin: 0;
     color: var(--ink);
     background: var(--night);
-    font-family: var(--text);
-    font-size: 1.125rem;
-    line-height: 1.7;
+    font-family: var(--ui);
+    font-size: 1rem;
+    line-height: 1.6;
     -webkit-text-size-adjust: 100%;
   }
 
-  /* ---------- masthead: same dusk sky as the privacy page ---------- */
+  a { color: inherit; }
+
+  /* ================= hero ================= */
   .sky {
     position: relative;
     overflow: hidden;
-    min-height: 22rem;
-    padding: 4.5rem 1.5rem 7.5rem;
+    padding: 3.4rem 1.5rem 6.5rem;
     background:
       radial-gradient(1.5px 1.5px at 8% 14%, #fff 50%, transparent 51%),
       radial-gradient(1px 1px at 17% 32%, #fff 50%, transparent 51%),
@@ -50,20 +53,18 @@
       radial-gradient(1px 1px at 71% 30%, #fff 50%, transparent 51%),
       radial-gradient(1.5px 1.5px at 86% 16%, #fff 50%, transparent 51%),
       radial-gradient(1px 1px at 93% 34%, #fff 50%, transparent 51%),
-      linear-gradient(180deg, #080C2E 0%, #1F1A66 30%, #6A2C91 54%, #E2506B 78%, #FF9A57 100%);
+      linear-gradient(180deg, #070419 0%, #1B1650 32%, #5A2C82 56%, #D6415F 80%, #FF9A57 100%);
   }
 
   .sky svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-
-  .sky-copy { position: relative; max-width: 44rem; margin: 0 auto; }
+  .sky-copy { position: relative; max-width: 40rem; margin: 0 auto; }
 
   .game {
-    margin: 0 0 0.4rem;
+    margin: 0 0 0.25rem;
     font-family: var(--display);
     font-style: italic;
     font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: 0.02em;
+    font-size: 1.15rem;
     color: #FFE0B2;
   }
 
@@ -72,41 +73,39 @@
     font-family: var(--display);
     font-style: italic;
     font-weight: 800;
-    font-size: clamp(3rem, 10vw, 5.4rem);
-    line-height: 0.95;
-    letter-spacing: 0.01em;
+    font-size: clamp(2.8rem, 11vw, 5rem);
+    line-height: 0.92;
     padding-right: 0.15em;
     color: var(--amber);
-    background: linear-gradient(180deg, #FFF59D 0%, #FFC107 55%, #FF6D00 100%);
+    background: linear-gradient(180deg, #FFF59D 0%, #FFC107 55%, #FF5A1F 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,.45));
   }
 
-  /* ---------- reading column ---------- */
+  /* ================= layout ================= */
   main {
-    max-width: 44rem;
-    margin: -4.5rem auto 0;
+    max-width: 40rem;
+    margin: -4rem auto 0;
     padding: 0 1.5rem 4rem;
     position: relative;
   }
 
-  /* profile plate: photo + name + role, cut-corner shape like the game's UI */
-  .profile-card {
-    --cut: 26px;
+  /* ---- fighter card: an angled ID plaque, VS-screen style ---- */
+  .card {
+    --cut: 22px;
     position: relative;
-    padding: 2.4rem 2rem 2.2rem;
-    background: linear-gradient(160deg, #2E2170 0%, #1D1350 60%);
+    background: linear-gradient(155deg, var(--panel-2) 0%, var(--panel) 65%);
     clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
-    box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+    box-shadow: 0 24px 50px rgba(0,0,0,.5);
   }
 
-  .profile-card::before {
+  .card::before {
     content: "";
     position: absolute;
     inset: 0;
-    padding: 2px;
+    padding: 1.5px;
     background: linear-gradient(135deg, var(--amber), var(--ember));
     clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -115,171 +114,192 @@
     pointer-events: none;
   }
 
-  .profile-card > * { position: relative; }
-
-  .avatar-wrap {
+  .card-top {
     display: flex;
-    justify-content: center;
-    margin-bottom: 1.2rem;
+    align-items: center;
+    gap: 1.3rem;
+    padding: 2rem 2rem 1.6rem;
   }
 
-  .avatar-ring {
-    width: 128px;
-    height: 128px;
-    border-radius: 50%;
-    padding: 4px;
-    background: linear-gradient(135deg, var(--gold), var(--ember));
-    box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+  /* angular portrait frame — a game character slot, not a generic avatar circle */
+  .portrait {
+    position: relative;
+    flex: 0 0 auto;
+    width: 104px;
+    height: 104px;
+    clip-path: polygon(18% 0, 100% 0, 100% 82%, 82% 100%, 0 100%, 0 18%);
+    background: linear-gradient(150deg, var(--gold), var(--ember));
+    padding: 3px;
   }
 
-  .avatar-ring img {
-    display: block;
+  .portrait-inner {
+    position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #0D0838;
-    border: 3px solid var(--night);
+    clip-path: polygon(18% 0, 100% 0, 100% 82%, 82% 100%, 0 100%, 0 18%);
+    background: #0D0733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
-  .profile-name {
-    margin: 0;
-    text-align: center;
+  .portrait-mark {
     font-family: var(--display);
     font-style: italic;
     font-weight: 800;
-    font-size: 1.9rem;
+    font-size: 2.4rem;
+    color: var(--gold);
     letter-spacing: 0.02em;
+  }
+
+  .portrait-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: none;
+  }
+
+  .portrait-photo.is-loaded { display: block; }
+
+  .id-text { min-width: 0; }
+
+  .id-name {
+    margin: 0;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 800;
+    font-size: 1.7rem;
+    line-height: 1.05;
     color: var(--gold);
   }
 
-  .profile-role {
-    margin: 0.3rem 0 0;
-    text-align: center;
-    font-size: 0.95rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
+  .id-role {
+    margin: 0.35rem 0 0;
+    font-size: 0.92rem;
+    color: var(--ink-dim);
   }
 
-  .profile-divider {
-    height: 1px;
-    margin: 1.6rem 0;
-    background: linear-gradient(90deg, transparent, rgba(255,196,107,0.4), transparent);
+  .id-role strong { color: var(--ink); font-weight: 600; }
+
+  /* health-bar style segmented rule — a real structural nod to the game, not decoration */
+  .hp-rule {
+    display: flex;
+    gap: 3px;
+    padding: 0 2rem;
   }
 
-  .contact-list {
+  .hp-rule span {
+    flex: 1;
+    height: 5px;
+    background: var(--hp);
+    opacity: 0.85;
+  }
+
+  .hp-rule span:nth-child(4n) { background: var(--amber); }
+
+  /* ---- contact block ---- */
+  .contacts {
+    padding: 1.6rem 2rem 2rem;
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 0.7rem;
   }
 
   .contact-row {
     display: flex;
     align-items: center;
     gap: 0.9rem;
-    padding: 0.9rem 1rem;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,196,107,0.18);
-    border-radius: 4px;
+    padding: 0.85rem 1rem;
+    background: rgba(255,255,255,.035);
+    border: 1px solid var(--edge);
     text-decoration: none;
     color: var(--ink);
-    transition: background 0.15s ease, border-color 0.15s ease;
+    transition: background .15s ease, border-color .15s ease, transform .15s ease;
   }
 
   .contact-row:hover {
-    background: rgba(255,196,107,0.08);
-    border-color: rgba(255,196,107,0.4);
+    background: rgba(255,180,72,.08);
+    border-color: rgba(255,180,72,.45);
+    transform: translateX(2px);
   }
 
   .contact-icon {
     flex: 0 0 auto;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    background: rgba(255,196,107,0.12);
+    background: rgba(255,180,72,.12);
     color: var(--gold);
+    clip-path: polygon(15% 0, 100% 0, 100% 85%, 85% 100%, 0 100%, 0 15%);
   }
 
-  .contact-icon svg { width: 20px; height: 20px; fill: currentColor; }
+  .contact-icon svg { width: 18px; height: 18px; fill: currentColor; }
 
   .contact-text { display: flex; flex-direction: column; min-width: 0; }
-
-  .contact-label {
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-
-  .contact-value {
-    font-size: 1.08rem;
-    color: var(--ink);
-    word-break: break-word;
-  }
-
+  .contact-label { font-size: 0.8rem; color: var(--ink-dim); }
+  .contact-value { font-size: 1.02rem; word-break: break-word; }
   .contact-row:hover .contact-value { color: var(--gold); }
 
-  /* small badge row */
-  .badges {
+  /* tags */
+  .tags {
     display: flex;
-    justify-content: center;
-    gap: 0.6rem;
-    margin-top: 1.8rem;
+    gap: 0.5rem;
     flex-wrap: wrap;
+    padding: 0 2rem 2rem;
   }
 
-  .badge {
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.35rem 0.8rem;
-    border-radius: 999px;
-    background: rgba(105,240,174,0.12);
-    color: var(--green);
-    border: 1px solid rgba(105,240,174,0.35);
+  .tag {
+    font-size: 0.82rem;
+    padding: 0.3rem 0.75rem;
+    background: rgba(105,240,174,.1);
+    color: var(--hp);
+    border: 1px solid rgba(105,240,174,.35);
   }
 
-  /* app note section below the card */
-  section.note-block {
-    margin-top: 2.6rem;
-    text-align: center;
+  /* ---- note ---- */
+  .note {
+    margin-top: 2.4rem;
+    padding: 1.6rem 1.8rem;
+    background: var(--panel);
+    border-left: 3px solid var(--ember);
   }
 
-  section.note-block h2 {
+  .note h2 {
+    margin: 0 0 0.4rem;
     font-family: var(--display);
     font-style: italic;
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--gold);
-    margin: 0 0 0.6rem;
   }
 
-  section.note-block p {
+  .note p {
     margin: 0;
-    color: var(--ink-soft);
-    font-size: 1.02rem;
+    color: var(--ink-dim);
+    font-size: 0.98rem;
   }
 
   footer {
-    max-width: 44rem;
+    max-width: 40rem;
     margin: 0 auto;
     padding: 1.5rem 1.5rem 3rem;
-    border-top: 1px solid rgba(255, 196, 107, 0.25);
-    color: var(--ink-soft);
-    font-size: 0.95rem;
+    color: var(--ink-dim);
+    font-size: 0.88rem;
     text-align: center;
   }
 
-  @media (max-width: 34rem) {
-    body { font-size: 1.02rem; }
-    .sky { padding-top: 3rem; min-height: 18rem; }
-    main { margin-top: -3.5rem; }
-    .profile-card { padding: 2rem 1.4rem 1.8rem; }
-    .avatar-ring { width: 104px; height: 104px; }
+  @media (max-width: 30rem) {
+    main { margin-top: -3.2rem; }
+    .card-top { flex-direction: column; text-align: center; padding: 1.8rem 1.4rem 1.4rem; }
+    .hp-rule { padding: 0 1.4rem; }
+    .contacts, .tags { padding-left: 1.4rem; padding-right: 1.4rem; }
+    .id-role { text-align: center; }
   }
 </style>
 </head>
@@ -293,7 +313,6 @@
     <path d="M0 320 V265 L120 232 L220 265 L340 228 L470 268 L590 236 L720 272 L850 238 L960 272 L1080 242 L1200 268 V320 Z" fill="#2C1352"/>
     <path d="M0 320 V292 L140 274 L260 294 L400 270 L540 296 L680 276 L820 298 L960 278 L1100 296 L1200 284 V320 Z" fill="#120A2E"/>
   </svg>
-
   <div class="sky-copy">
     <p class="game">Slow Fight</p>
     <h1>Contact</h1>
@@ -302,20 +321,29 @@
 
 <main>
 
-  <div class="profile-card">
-    <div class="avatar-wrap">
-      <div class="avatar-ring">
-        <!-- ছবি এখানে বসবে: photo.jpg ফাইলটা এই HTML ফাইলের পাশে রাখুন -->
-        <img src="photo.jpg" alt="AD_ Foisal Ahmed">
+  <div class="card">
+    <div class="card-top">
+      <div class="portrait">
+        <div class="portrait-inner">
+          <span class="portrait-mark">FA</span>
+          <!-- photo.jpg এই HTML ফাইলের পাশে রাখুন; না পেলে উপরের "FA" মনোগ্রাম দেখাবে -->
+          <img class="portrait-photo" src="photo.jpg" alt="AD_ Foisal Ahmed"
+               onload="this.classList.add('is-loaded')"
+               onerror="this.remove()">
+        </div>
+      </div>
+      <div class="id-text">
+        <p class="id-name">AD_ Foisal Ahmed</p>
+        <p class="id-role">App developer of <strong>Slow Fight</strong></p>
       </div>
     </div>
 
-    <p class="profile-name">AD_ FOISAL AHMED</p>
-    <p class="profile-role">App Developer &middot; Slow Fight</p>
+    <div class="hp-rule" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
 
-    <div class="profile-divider"></div>
-
-    <div class="contact-list">
+    <div class="contacts">
       <a class="contact-row" href="mailto:mdf69309@gmail.com">
         <span class="contact-icon">
           <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4zm16 2.24-7.4 6.47a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24z"/></svg>
@@ -337,16 +365,15 @@
       </a>
     </div>
 
-    <div class="badges">
-      <span class="badge">Android Developer</span>
-      <span class="badge">Bangladesh</span>
+    <div class="tags">
+      <span class="tag">Android developer</span>
+      <span class="tag">Bangladesh</span>
     </div>
   </div>
 
-  <section class="note-block">
+  <section class="note">
     <h2>Need help?</h2>
-    <p>For bug reports, feature requests, purchase issues or privacy questions about<br>
-    Slow Fight, reach out using the details above — we usually reply within a day.</p>
+    <p>Bug reports, feature requests, purchase issues or privacy questions about Slow Fight — reach out using the details above. We usually reply within a day.</p>
   </section>
 
 </main>
