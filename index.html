@@ -10,17 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0F1E36;
-    --navy-2: #172B4A;
-    --paper: #F4F6F9;
+    --navy: #0C1A30;
+    --navy-2: #14284A;
+    --paper: #EEF1F6;
     --white: #FFFFFF;
-    --ink: #17233A;
-    --muted: #5B6779;
-    --line: #DDE2EA;
-    --accent: #1C7C8C;
-    --accent-soft: #E3F1F3;
-    --on-navy: #DCE4F0;
-    --on-navy-dim: #98A7BF;
+    --ink: #15213A;
+    --muted: #5A6578;
+    --line: #DCE1EA;
+    --accent: #12A3B4;
+    --accent-dark: #0D7C8A;
+    --accent-soft: #E1F4F6;
+    --gold: #F2B84B;
     --head: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
     --body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
   }
@@ -29,139 +29,208 @@
   a { color: inherit; }
   a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
-  .page { max-width: 62rem; margin: 2.5rem auto; background: var(--white); display: grid; grid-template-columns: 19.5rem 1fr; box-shadow: 0 20px 60px rgba(15,30,54,.14); border-radius: 6px; overflow: hidden; }
+  /* ---------- banner ---------- */
+  .banner {
+    height: 15rem; position: relative; overflow: hidden;
+    background:
+      radial-gradient(60% 120% at 85% 0%, rgba(18,163,180,.45) 0%, transparent 60%),
+      radial-gradient(40% 90% at 10% 100%, rgba(242,184,75,.18) 0%, transparent 60%),
+      linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+  }
+  .banner::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size: 36px 36px;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 95%);
+    mask-image: linear-gradient(180deg, #000 0%, transparent 95%);
+  }
+  .banner .code {
+    position: absolute; right: 4%; top: 50%; transform: translateY(-60%);
+    font-family: var(--head); font-weight: 800; font-size: clamp(4rem, 14vw, 9rem);
+    color: rgba(255,255,255,.07); letter-spacing: -.04em; user-select: none;
+  }
 
-  /* ---------- sidebar ---------- */
-  aside { background: var(--navy); color: var(--on-navy); padding: 2.6rem 2rem; }
-  .photo { width: 168px; aspect-ratio: 3 / 4; margin: 0 auto 2rem; border-radius: 4px; background: var(--navy-2); border: 3px solid rgba(255,255,255,.9); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,.35); }
-  .photo .mark { font-family: var(--head); font-weight: 800; font-size: 2.6rem; color: var(--on-navy-dim); }
+  .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.5rem 3rem; }
+
+  /* ---------- profile header ---------- */
+  .profile { display: flex; align-items: flex-end; gap: 2rem; margin-top: -6.5rem; position: relative; }
+  .photo {
+    flex: 0 0 auto; width: 180px; aspect-ratio: 3 / 4; border-radius: 6px; position: relative; overflow: hidden;
+    background: var(--navy-2); border: 5px solid var(--white);
+    box-shadow: 0 14px 34px rgba(12,26,48,.35);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .photo .mark { font-family: var(--head); font-weight: 800; font-size: 2.8rem; color: #8FA3C2; }
   .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: none; }
   .photo img.is-loaded { display: block; }
 
-  aside h2 { margin: 0 0 1rem; font-family: var(--head); font-weight: 700; font-size: 1.05rem; color: var(--white); padding-bottom: .6rem; border-bottom: 1px solid rgba(255,255,255,.18); }
-  .contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.15rem; }
-  .contact li { display: flex; gap: .8rem; align-items: flex-start; }
-  .contact svg { flex: 0 0 auto; width: 20px; height: 20px; margin-top: .2rem; fill: #6FC3CF; }
-  .contact .k { display: block; font-size: .85rem; color: var(--on-navy-dim); }
-  .contact .v { display: block; color: var(--white); overflow-wrap: anywhere; line-height: 1.45; }
+  .headline { padding-bottom: .4rem; min-width: 0; }
+  .status { display: inline-flex; align-items: center; gap: .5rem; padding: .25rem .8rem; border-radius: 99px; background: rgba(255,255,255,.14); color: #E6F3F5; font-size: .88rem; font-weight: 600; backdrop-filter: blur(4px); }
+  .status i { width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; box-shadow: 0 0 0 3px rgba(74,222,128,.28); }
+  h1 { margin: .7rem 0 0; font-family: var(--head); font-weight: 800; font-size: clamp(1.8rem, 4.6vw, 2.6rem); line-height: 1.1; letter-spacing: -.015em; color: var(--white); overflow-wrap: anywhere; }
+  .role { margin: .45rem 0 0; font-family: var(--head); font-weight: 500; font-size: 1.12rem; color: var(--gold); }
+
+  /* ---------- layout ---------- */
+  .grid { display: grid; grid-template-columns: 19rem 1fr; gap: 1.6rem; margin-top: 2rem; align-items: start; }
+  .panel { background: var(--white); border-radius: 8px; padding: 1.6rem; box-shadow: 0 1px 2px rgba(12,26,48,.06), 0 8px 24px rgba(12,26,48,.05); }
+  .panel + .panel { margin-top: 1.6rem; }
+  h2 { margin: 0 0 1rem; font-family: var(--head); font-weight: 800; font-size: 1.15rem; color: var(--navy); display: flex; align-items: center; gap: .6rem; }
+  h2::before { content: ""; width: 4px; height: 1.1em; border-radius: 2px; background: var(--accent); }
+
+  /* contact */
+  .contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  .contact li { display: flex; gap: .85rem; align-items: flex-start; }
+  .ci { flex: 0 0 auto; width: 2.5rem; height: 2.5rem; border-radius: 8px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; }
+  .ci svg { width: 20px; height: 20px; fill: var(--accent-dark); }
+  .k { display: block; font-size: .82rem; color: var(--muted); line-height: 1.3; }
+  .v { display: block; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; line-height: 1.4; }
   .contact a { text-decoration: none; }
-  .contact a:hover .v { text-decoration: underline; text-underline-offset: 3px; }
+  .contact a:hover .v { color: var(--accent-dark); }
 
-  /* ---------- main ---------- */
-  main { padding: 3rem 3rem 3rem; }
-  .intro { padding-bottom: 2rem; border-bottom: 1px solid var(--line); }
-  h1 { margin: 0; font-family: var(--head); font-weight: 800; font-size: clamp(1.9rem, 4.6vw, 2.7rem); line-height: 1.1; letter-spacing: -.01em; color: var(--navy); overflow-wrap: anywhere; }
-  .role { margin: .6rem 0 0; font-family: var(--head); font-weight: 500; font-size: 1.15rem; color: var(--accent); }
-  .about { margin: 1.2rem 0 0; max-width: 36rem; color: var(--muted); }
-
-  .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
-  .btn { display: inline-flex; align-items: center; gap: .55rem; padding: .7rem 1.2rem; border-radius: 4px; font-family: var(--head); font-weight: 700; font-size: .95rem; text-decoration: none; border: 1.5px solid var(--navy); transition: background .15s ease, color .15s ease; }
+  .btns { display: grid; gap: .6rem; margin-top: 1.4rem; }
+  .btn { display: flex; align-items: center; justify-content: center; gap: .55rem; padding: .75rem 1rem; border-radius: 6px; font-family: var(--head); font-weight: 700; font-size: .95rem; text-decoration: none; transition: transform .15s ease, background .15s ease; }
   .btn svg { width: 18px; height: 18px; fill: currentColor; }
-  .btn.primary { background: var(--navy); color: var(--white); }
-  .btn.primary:hover { background: var(--accent); border-color: var(--accent); }
-  .btn.ghost { color: var(--navy); }
-  .btn.ghost:hover { background: var(--navy); color: var(--white); }
+  .btn.wa { background: #1FA855; color: #fff; }
+  .btn.wa:hover { background: #178a45; }
+  .btn.tg { background: #229ED9; color: #fff; }
+  .btn.tg:hover { background: #1b84b6; }
 
-  h3.sec { margin: 2.2rem 0 .4rem; font-family: var(--head); font-weight: 800; font-size: 1.25rem; color: var(--navy); }
-  .sec-sub { margin: 0 0 .6rem; color: var(--muted); font-size: .98rem; }
+  /* about */
+  .about { margin: 0; color: var(--muted); }
 
-  .services { list-style: none; margin: 0; padding: 0; }
-  .services li { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.2rem 0; border-top: 1px solid var(--line); }
-  .services li:last-child { border-bottom: 1px solid var(--line); }
-  .ico { width: 3rem; height: 3rem; border-radius: 6px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; }
-  .ico svg { width: 24px; height: 24px; fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .services h4 { margin: 0; font-family: var(--head); font-weight: 700; font-size: 1.08rem; color: var(--navy); }
-  .services p { margin: .2rem 0 0; color: var(--muted); font-size: 1rem; }
+  /* services */
+  .services { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .svc { padding: 1.3rem; border: 1px solid var(--line); border-radius: 8px; background: linear-gradient(180deg, #fff 0%, #F8FAFC 100%); transition: border-color .15s ease, box-shadow .15s ease; }
+  .svc:hover { border-color: var(--accent); box-shadow: 0 8px 22px rgba(18,163,180,.14); }
+  .ico { width: 2.9rem; height: 2.9rem; border-radius: 10px; background: var(--navy); display: flex; align-items: center; justify-content: center; margin-bottom: .9rem; }
+  .ico svg { width: 22px; height: 22px; fill: none; stroke: #7FDDE8; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .svc h3 { margin: 0; font-family: var(--head); font-weight: 700; font-size: 1.05rem; color: var(--navy); }
+  .svc p { margin: .3rem 0 0; font-size: .98rem; color: var(--muted); line-height: 1.5; }
 
-  footer { margin-top: 2.2rem; color: var(--muted); font-size: .9rem; }
+  /* process: a real sequence */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; counter-reset: s; }
+  .steps li { counter-increment: s; position: relative; padding-top: 2.6rem; }
+  .steps li::before { content: counter(s); position: absolute; top: 0; left: 0; width: 2rem; height: 2rem; border-radius: 50%; background: var(--accent); color: #fff; font-family: var(--head); font-weight: 800; font-size: .95rem; display: flex; align-items: center; justify-content: center; }
+  .steps li::after { content: ""; position: absolute; top: 1rem; left: 2.4rem; right: -.6rem; height: 2px; background: var(--line); }
+  .steps li:last-child::after { display: none; }
+  .steps b { display: block; font-family: var(--head); font-size: 1rem; color: var(--navy); }
+  .steps span { font-size: .92rem; color: var(--muted); line-height: 1.45; display: block; margin-top: .15rem; }
+
+  footer { margin-top: 2rem; text-align: center; color: var(--muted); font-size: .9rem; }
 
   /* ---------- responsive ---------- */
   @media (max-width: 52rem) {
-    .page { grid-template-columns: 1fr; margin: 0; border-radius: 0; }
-    aside { padding: 2.2rem 1.5rem; }
-    .contact { max-width: 26rem; margin: 0 auto; }
-    aside h2 { max-width: 26rem; margin-left: auto; margin-right: auto; }
-    main { padding: 2.2rem 1.5rem; }
+    .banner { height: 13rem; }
+    .profile { flex-direction: column; align-items: center; text-align: center; gap: 1.2rem; margin-top: -7rem; }
+    .headline { padding-bottom: 0; }
+    h1 { color: var(--navy); }
+    .status { background: var(--accent-soft); color: var(--accent-dark); }
+    .grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 36rem) {
+    .services { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; row-gap: 1.4rem; }
+    .steps li::after { display: none; }
   }
   @media print {
     body { background: #fff; }
-    .page { box-shadow: none; margin: 0; }
-    .actions { display: none; }
-    aside { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .btns { display: none; }
+    .banner, .ico, .steps li::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
 </head>
 <body>
 
-<div class="page">
-  <aside>
+<div class="banner" aria-hidden="true"><span class="code">&lt;/&gt;</span></div>
+
+<div class="wrap">
+  <header class="profile">
     <div class="photo">
       <span class="mark">FA</span>
       <!-- Photo file: photo.png (falls back to photo.jpg) next to this HTML file -->
       <img src="photo.png" alt="AD_FOISAL AHMED NAHID" onload="this.classList.add('is-loaded')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='photo.jpg'}else{this.remove()}">
     </div>
-
-    <h2>Contact</h2>
-    <ul class="contact">
-      <li>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.20-8 5v3h16v-3c0-2.80-3.60-5-8-5z"/></svg>
-        <span><span class="k">Name</span><span class="v">AD_FOISAL AHMED NAHID</span></span>
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.60 15.10L2 22l5-1.30A10 10 0 1 0 12 2zm0 18.20c-1.50 0-2.90-.4-4.10-1.10l-.3-.2-3 .8.8-2.90-.2-.3A8.20 8.20 0 1 1 12 20.20zm4.50-6.10c-.2-.1-1.50-.7-1.70-.8-.2-.1-.4-.1-.6.10l-.8 1c-.1.20-.3.20-.5.10a6.70 6.70 0 0 1-3.30-2.90c-.2-.4.2-.4.70-1.30.1-.2 0-.3 0-.5l-.8-1.80c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.10-.7.30-.2.30-.9.90-.9 2.20s.9 2.50 1 2.70c.1.20 1.80 2.80 4.40 3.90 1.60.7 2.30.8 3.10.6.50-.1 1.50-.6 1.70-1.20.2-.6.2-1.10.2-1.20-.1-.1-.2-.2-.5-.3z"/></svg>
-        <a href="https://wa.me/8801314400688"><span class="k">WhatsApp</span><span class="v">+880 1314-400688</span></a>
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.90 4.10 2.80 11.40c-1.30.5-1.30 1.30-.2 1.60l4.90 1.50 1.90 5.80c.2.60.1.80.7.80.5 0 .7-.2 1-.5l2.40-2.30 4.90 3.60c.9.50 1.50.2 1.70-.8l3.20-15.10c.3-1.30-.5-1.90-1.40-1.50zM8.50 13.70l9.80-6.20c.5-.3.9-.1.5.2l-8.10 7.30-.3 3.40-1.90-4.70z"/></svg>
-        <a href="https://t.me/surebdadmin"><span class="k">Telegram</span><span class="v">@surebdadmin</span></a>
-      </li>
-      <li>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.20 7 13 7 13s7-7.80 7-13a7 7 0 0 0-7-7zm0 9.50A2.50 2.50 0 1 1 12 6.50a2.50 2.50 0 0 1 0 5z"/></svg>
-        <span><span class="k">Address</span><span class="v">Keshorhat Bazzar<br>Vill: Shehaloy, House: 293<br>Keshorhat, Mohanpur<br>Rajshahi, Rajshahi Division<br>Bangladesh</span></span>
-      </li>
-    </ul>
-  </aside>
-
-  <main>
-    <section class="intro">
+    <div class="headline">
+      <span class="status"><i></i>Available for new projects</span>
       <h1>AD_FOISAL AHMED NAHID</h1>
       <p class="role">Android, Flutter &amp; Web Developer</p>
-      <p class="about">I design and build mobile apps and websites that are fast, reliable and easy to use. From a first idea to a finished product, I handle the development end to end.</p>
-      <div class="actions">
-        <a class="btn primary" href="https://wa.me/8801314400688">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.60 15.10L2 22l5-1.30A10 10 0 1 0 12 2zm0 18.20c-1.50 0-2.90-.4-4.10-1.10l-.3-.2-3 .8.8-2.90-.2-.3A8.20 8.20 0 1 1 12 20.20z"/></svg>
-          Message on WhatsApp
-        </a>
-        <a class="btn ghost" href="https://t.me/surebdadmin">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.90 4.10 2.80 11.40c-1.30.5-1.30 1.30-.2 1.60l4.90 1.50 1.90 5.80c.2.60.1.80.7.80.5 0 .7-.2 1-.5l2.40-2.30 4.90 3.60c.9.50 1.50.2 1.70-.8l3.20-15.10c.3-1.30-.5-1.90-1.40-1.50z"/></svg>
-          Chat on Telegram
-        </a>
-      </div>
-    </section>
+    </div>
+  </header>
 
-    <h3 class="sec">Applications I build</h3>
-    <p class="sec-sub">Four areas of work, each delivered from planning to launch.</p>
-    <ul class="services">
-      <li>
-        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.50" width="12" height="19" rx="2.50"/><path d="M10.50 18.50h3"/></svg></span>
-        <div><h4>Android App Development</h4><p>Native Android apps and games, built for smooth performance and ready to publish on Google Play.</p></div>
-      </li>
-      <li>
-        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 13 3h6L9 13l10 8h-6z"/></svg></span>
-        <div><h4>Flutter App Development</h4><p>Cross-platform apps from a single codebase, with a polished interface on Android and iOS.</p></div>
-      </li>
-      <li>
-        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></span>
-        <div><h4>Web Application Development</h4><p>Interactive web apps with dashboards, logins and databases, working on any phone or computer.</p></div>
-      </li>
-      <li>
-        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.50 2.70 3.80 5.70 3.80 9S14.50 18.30 12 21c-2.50-2.70-3.80-5.70-3.80-9S9.50 5.70 12 3z"/></svg></span>
-        <div><h4>Website Design &amp; Development</h4><p>Fast, clean and responsive websites for businesses, brands and personal portfolios.</p></div>
-      </li>
-    </ul>
+  <div class="grid">
+    <aside>
+      <section class="panel">
+        <h2>Contact</h2>
+        <ul class="contact">
+          <li>
+            <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.2-8 5v3h16v-3c0-2.8-3.6-5-8-5z"/></svg></span>
+            <span><span class="k">Name</span><span class="v">AD_FOISAL AHMED NAHID</span></span>
+          </li>
+          <li>
+            <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg></span>
+            <a href="https://wa.me/8801314400688"><span class="k">WhatsApp</span><span class="v">+880 1314-400688</span></a>
+          </li>
+          <li>
+            <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.1 2.8 11.4c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 5.8c.2.6.1.8.7.8.5 0 .7-.2 1-.5l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.7-.8l3.2-15.1c.3-1.3-.5-1.9-1.4-1.5zM8.5 13.7l9.8-6.2c.5-.3.9-.1.5.2l-8.1 7.3-.3 3.4-1.9-4.7z"/></svg></span>
+            <a href="https://t.me/surebdadmin"><span class="k">Telegram</span><span class="v">@surebdadmin</span></a>
+          </li>
+          <li>
+            <span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>
+            <span><span class="k">Address</span><span class="v">Keshorhat Bazzar<br>Vill: Shehaloy, House: 293<br>Keshorhat, Mohanpur<br>Rajshahi, Rajshahi Division<br>Bangladesh</span></span>
+          </li>
+        </ul>
+        <div class="btns">
+          <a class="btn wa" href="https://wa.me/8801314400688">Message on WhatsApp</a>
+          <a class="btn tg" href="https://t.me/surebdadmin">Chat on Telegram</a>
+        </div>
+      </section>
+    </aside>
 
-    <footer>© 2026 AD_FOISAL AHMED NAHID. All rights reserved.</footer>
-  </main>
+    <main>
+      <section class="panel">
+        <h2>About</h2>
+        <p class="about">I design and build mobile apps and websites that are fast, reliable and easy to use. From the first idea to the finished product, I handle the development end to end, so you get a result that is ready to launch.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Applications I build</h2>
+        <div class="services">
+          <article class="svc">
+            <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></div>
+            <h3>Android Apps</h3>
+            <p>Native Android apps and games, built for smooth performance and ready for Google Play.</p>
+          </article>
+          <article class="svc">
+            <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 13 3h6L9 13l10 8h-6z"/></svg></div>
+            <h3>Flutter Apps</h3>
+            <p>One codebase for a polished app on both Android and iOS.</p>
+          </article>
+          <article class="svc">
+            <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+            <h3>Web Applications</h3>
+            <p>Interactive web apps with logins, dashboards and databases, on any device.</p>
+          </article>
+          <article class="svc">
+            <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9S14.5 18.3 12 21c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg></div>
+            <h3>Websites</h3>
+            <p>Fast, clean and responsive websites for businesses, brands and portfolios.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>How I work</h2>
+        <ol class="steps">
+          <li><b>Plan</b><span>We agree on goals, features and timeline.</span></li>
+          <li><b>Design</b><span>A clear, modern interface for your users.</span></li>
+          <li><b>Build</b><span>Clean, tested code with regular updates.</span></li>
+          <li><b>Launch</b><span>Publishing and support after delivery.</span></li>
+        </ol>
+      </section>
+    </main>
+  </div>
+
+  <footer>© 2026 AD_FOISAL AHMED NAHID. All rights reserved.</footer>
 </div>
 
 </body>
