@@ -3,384 +3,166 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Slow Fight – Developer Contact</title>
-<meta name="description" content="Contact information for the developer of the Android game Slow Fight.">
+<title>AD_FOISAL AHMED NAHID – Android, Flutter & Web Developer</title>
+<meta name="description" content="Professional profile of AD_FOISAL AHMED NAHID – Android, Flutter and web developer from Bangladesh.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700;1,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --night: #0B0620;
-    --panel: #170F3E;
-    --panel-2: #1F1450;
-    --edge: #362A72;
-    --ink: #EDE7FB;
-    --ink-dim: #9C93C4;
-    --ember: #FF4D5E;
-    --amber: #FFB648;
-    --gold: #FFD27F;
-    --hp: #69F0AE;
-    --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
-    --ui: "IBM Plex Sans", Arial, sans-serif;
+    --navy: #0F1E36;
+    --navy-2: #172B4A;
+    --paper: #F4F6F9;
+    --white: #FFFFFF;
+    --ink: #17233A;
+    --muted: #5B6779;
+    --line: #DDE2EA;
+    --accent: #1C7C8C;
+    --accent-soft: #E3F1F3;
+    --on-navy: #DCE4F0;
+    --on-navy-dim: #98A7BF;
+    --head: "Plus Jakarta Sans", "Segoe UI", Arial, sans-serif;
+    --body: "Source Sans 3", "Segoe UI", Arial, sans-serif;
   }
-
   * { box-sizing: border-box; }
-  html { background: var(--night); }
-
-  body {
-    margin: 0;
-    color: var(--ink);
-    background: var(--night);
-    font-family: var(--ui);
-    font-size: 1rem;
-    line-height: 1.6;
-    -webkit-text-size-adjust: 100%;
-  }
-
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.05rem; line-height: 1.6; -webkit-text-size-adjust: 100%; }
   a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
-  /* ================= hero ================= */
-  .sky {
-    position: relative;
-    overflow: hidden;
-    padding: 3.4rem 1.5rem 6.5rem;
-    background:
-      radial-gradient(1.5px 1.5px at 8% 14%, #fff 50%, transparent 51%),
-      radial-gradient(1px 1px at 17% 32%, #fff 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 31% 10%, #fff 50%, transparent 51%),
-      radial-gradient(1px 1px at 44% 26%, #fff 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 58% 12%, #fff 50%, transparent 51%),
-      radial-gradient(1px 1px at 71% 30%, #fff 50%, transparent 51%),
-      radial-gradient(1.5px 1.5px at 86% 16%, #fff 50%, transparent 51%),
-      radial-gradient(1px 1px at 93% 34%, #fff 50%, transparent 51%),
-      linear-gradient(180deg, #070419 0%, #1B1650 32%, #5A2C82 56%, #D6415F 80%, #FF9A57 100%);
+  .page { max-width: 62rem; margin: 2.5rem auto; background: var(--white); display: grid; grid-template-columns: 19.5rem 1fr; box-shadow: 0 20px 60px rgba(15,30,54,.14); border-radius: 6px; overflow: hidden; }
+
+  /* ---------- sidebar ---------- */
+  aside { background: var(--navy); color: var(--on-navy); padding: 2.6rem 2rem; }
+  .photo { width: 168px; aspect-ratio: 3 / 4; margin: 0 auto 2rem; border-radius: 4px; background: var(--navy-2); border: 3px solid rgba(255,255,255,.9); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+  .photo .mark { font-family: var(--head); font-weight: 800; font-size: 2.6rem; color: var(--on-navy-dim); }
+  .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: none; }
+  .photo img.is-loaded { display: block; }
+
+  aside h2 { margin: 0 0 1rem; font-family: var(--head); font-weight: 700; font-size: 1.05rem; color: var(--white); padding-bottom: .6rem; border-bottom: 1px solid rgba(255,255,255,.18); }
+  .contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.15rem; }
+  .contact li { display: flex; gap: .8rem; align-items: flex-start; }
+  .contact svg { flex: 0 0 auto; width: 20px; height: 20px; margin-top: .2rem; fill: #6FC3CF; }
+  .contact .k { display: block; font-size: .85rem; color: var(--on-navy-dim); }
+  .contact .v { display: block; color: var(--white); overflow-wrap: anywhere; line-height: 1.45; }
+  .contact a { text-decoration: none; }
+  .contact a:hover .v { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ---------- main ---------- */
+  main { padding: 3rem 3rem 3rem; }
+  .intro { padding-bottom: 2rem; border-bottom: 1px solid var(--line); }
+  h1 { margin: 0; font-family: var(--head); font-weight: 800; font-size: clamp(1.9rem, 4.6vw, 2.7rem); line-height: 1.1; letter-spacing: -.01em; color: var(--navy); overflow-wrap: anywhere; }
+  .role { margin: .6rem 0 0; font-family: var(--head); font-weight: 500; font-size: 1.15rem; color: var(--accent); }
+  .about { margin: 1.2rem 0 0; max-width: 36rem; color: var(--muted); }
+
+  .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+  .btn { display: inline-flex; align-items: center; gap: .55rem; padding: .7rem 1.2rem; border-radius: 4px; font-family: var(--head); font-weight: 700; font-size: .95rem; text-decoration: none; border: 1.5px solid var(--navy); transition: background .15s ease, color .15s ease; }
+  .btn svg { width: 18px; height: 18px; fill: currentColor; }
+  .btn.primary { background: var(--navy); color: var(--white); }
+  .btn.primary:hover { background: var(--accent); border-color: var(--accent); }
+  .btn.ghost { color: var(--navy); }
+  .btn.ghost:hover { background: var(--navy); color: var(--white); }
+
+  h3.sec { margin: 2.2rem 0 .4rem; font-family: var(--head); font-weight: 800; font-size: 1.25rem; color: var(--navy); }
+  .sec-sub { margin: 0 0 .6rem; color: var(--muted); font-size: .98rem; }
+
+  .services { list-style: none; margin: 0; padding: 0; }
+  .services li { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.2rem 0; border-top: 1px solid var(--line); }
+  .services li:last-child { border-bottom: 1px solid var(--line); }
+  .ico { width: 3rem; height: 3rem; border-radius: 6px; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; }
+  .ico svg { width: 24px; height: 24px; fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .services h4 { margin: 0; font-family: var(--head); font-weight: 700; font-size: 1.08rem; color: var(--navy); }
+  .services p { margin: .2rem 0 0; color: var(--muted); font-size: 1rem; }
+
+  footer { margin-top: 2.2rem; color: var(--muted); font-size: .9rem; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 52rem) {
+    .page { grid-template-columns: 1fr; margin: 0; border-radius: 0; }
+    aside { padding: 2.2rem 1.5rem; }
+    .contact { max-width: 26rem; margin: 0 auto; }
+    aside h2 { max-width: 26rem; margin-left: auto; margin-right: auto; }
+    main { padding: 2.2rem 1.5rem; }
   }
-
-  .sky svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-  .sky-copy { position: relative; max-width: 40rem; margin: 0 auto; }
-
-  .game {
-    margin: 0 0 0.25rem;
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 700;
-    font-size: 1.15rem;
-    color: #FFE0B2;
-  }
-
-  h1 {
-    margin: 0;
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 800;
-    font-size: clamp(2.8rem, 11vw, 5rem);
-    line-height: 0.92;
-    padding-right: 0.15em;
-    color: var(--amber);
-    background: linear-gradient(180deg, #FFF59D 0%, #FFC107 55%, #FF5A1F 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,.45));
-  }
-
-  /* ================= layout ================= */
-  main {
-    max-width: 40rem;
-    margin: -4rem auto 0;
-    padding: 0 1.5rem 4rem;
-    position: relative;
-  }
-
-  /* ---- fighter card: an angled ID plaque, VS-screen style ---- */
-  .card {
-    --cut: 22px;
-    position: relative;
-    background: linear-gradient(155deg, var(--panel-2) 0%, var(--panel) 65%);
-    clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
-    box-shadow: 0 24px 50px rgba(0,0,0,.5);
-  }
-
-  .card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    padding: 1.5px;
-    background: linear-gradient(135deg, var(--amber), var(--ember));
-    clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
-
-  .card-top {
-    display: flex;
-    align-items: center;
-    gap: 1.3rem;
-    padding: 2rem 2rem 1.6rem;
-  }
-
-  /* angular portrait frame — a game character slot, not a generic avatar circle */
-  .portrait {
-    position: relative;
-    flex: 0 0 auto;
-    width: 104px;
-    height: 104px;
-    clip-path: polygon(18% 0, 100% 0, 100% 82%, 82% 100%, 0 100%, 0 18%);
-    background: linear-gradient(150deg, var(--gold), var(--ember));
-    padding: 3px;
-  }
-
-  .portrait-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(18% 0, 100% 0, 100% 82%, 82% 100%, 0 100%, 0 18%);
-    background: #0D0733;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  .portrait-mark {
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 800;
-    font-size: 2.4rem;
-    color: var(--gold);
-    letter-spacing: 0.02em;
-  }
-
-  .portrait-photo {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: none;
-  }
-
-  .portrait-photo.is-loaded { display: block; }
-
-  .id-text { min-width: 0; }
-
-  .id-name {
-    margin: 0;
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 800;
-    font-size: 1.7rem;
-    line-height: 1.05;
-    color: var(--gold);
-  }
-
-  .id-role {
-    margin: 0.35rem 0 0;
-    font-size: 0.92rem;
-    color: var(--ink-dim);
-  }
-
-  .id-role strong { color: var(--ink); font-weight: 600; }
-
-  /* health-bar style segmented rule — a real structural nod to the game, not decoration */
-  .hp-rule {
-    display: flex;
-    gap: 3px;
-    padding: 0 2rem;
-  }
-
-  .hp-rule span {
-    flex: 1;
-    height: 5px;
-    background: var(--hp);
-    opacity: 0.85;
-  }
-
-  .hp-rule span:nth-child(4n) { background: var(--amber); }
-
-  /* ---- contact block ---- */
-  .contacts {
-    padding: 1.6rem 2rem 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-  }
-
-  .contact-row {
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-    padding: 0.85rem 1rem;
-    background: rgba(255,255,255,.035);
-    border: 1px solid var(--edge);
-    text-decoration: none;
-    color: var(--ink);
-    transition: background .15s ease, border-color .15s ease, transform .15s ease;
-  }
-
-  .contact-row:hover {
-    background: rgba(255,180,72,.08);
-    border-color: rgba(255,180,72,.45);
-    transform: translateX(2px);
-  }
-
-  .contact-icon {
-    flex: 0 0 auto;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,180,72,.12);
-    color: var(--gold);
-    clip-path: polygon(15% 0, 100% 0, 100% 85%, 85% 100%, 0 100%, 0 15%);
-  }
-
-  .contact-icon svg { width: 18px; height: 18px; fill: currentColor; }
-
-  .contact-text { display: flex; flex-direction: column; min-width: 0; }
-  .contact-label { font-size: 0.8rem; color: var(--ink-dim); }
-  .contact-value { font-size: 1.02rem; word-break: break-word; }
-  .contact-row:hover .contact-value { color: var(--gold); }
-
-  /* tags */
-  .tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    padding: 0 2rem 2rem;
-  }
-
-  .tag {
-    font-size: 0.82rem;
-    padding: 0.3rem 0.75rem;
-    background: rgba(105,240,174,.1);
-    color: var(--hp);
-    border: 1px solid rgba(105,240,174,.35);
-  }
-
-  /* ---- note ---- */
-  .note {
-    margin-top: 2.4rem;
-    padding: 1.6rem 1.8rem;
-    background: var(--panel);
-    border-left: 3px solid var(--ember);
-  }
-
-  .note h2 {
-    margin: 0 0 0.4rem;
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 800;
-    font-size: 1.3rem;
-    color: var(--gold);
-  }
-
-  .note p {
-    margin: 0;
-    color: var(--ink-dim);
-    font-size: 0.98rem;
-  }
-
-  footer {
-    max-width: 40rem;
-    margin: 0 auto;
-    padding: 1.5rem 1.5rem 3rem;
-    color: var(--ink-dim);
-    font-size: 0.88rem;
-    text-align: center;
-  }
-
-  @media (max-width: 30rem) {
-    main { margin-top: -3.2rem; }
-    .card-top { flex-direction: column; text-align: center; padding: 1.8rem 1.4rem 1.4rem; }
-    .hp-rule { padding: 0 1.4rem; }
-    .contacts, .tags { padding-left: 1.4rem; padding-right: 1.4rem; }
-    .id-role { text-align: center; }
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; }
+    .actions { display: none; }
+    aside { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
 </head>
 <body>
 
-<header class="sky">
-  <svg viewBox="0 0 1200 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-    <circle cx="600" cy="260" r="170" fill="#FFD27F" opacity="0.18"/>
-    <circle cx="600" cy="260" r="105" fill="#FFD27F" opacity="0.28"/>
-    <path d="M0 320 V230 L90 190 L170 230 L280 175 L380 230 L500 182 L620 238 L740 178 L860 230 L980 186 L1100 230 L1200 198 V320 Z" fill="#4A2270"/>
-    <path d="M0 320 V265 L120 232 L220 265 L340 228 L470 268 L590 236 L720 272 L850 238 L960 272 L1080 242 L1200 268 V320 Z" fill="#2C1352"/>
-    <path d="M0 320 V292 L140 274 L260 294 L400 270 L540 296 L680 276 L820 298 L960 278 L1100 296 L1200 284 V320 Z" fill="#120A2E"/>
-  </svg>
-  <div class="sky-copy">
-    <p class="game">Slow Fight</p>
-    <h1>Contact</h1>
-  </div>
-</header>
+<div class="page">
+  <aside>
+    <div class="photo">
+      <span class="mark">FA</span>
+      <!-- Put your passport-size photo named photo.jpg next to this HTML file -->
+      <img src="photo.jpg" alt="AD_FOISAL AHMED NAHID" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+    </div>
 
-<main>
+    <h2>Contact</h2>
+    <ul class="contact">
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2c-4.4 0-8 2.20-8 5v3h16v-3c0-2.80-3.60-5-8-5z"/></svg>
+        <span><span class="k">Name</span><span class="v">AD_FOISAL AHMED NAHID</span></span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.60 15.10L2 22l5-1.30A10 10 0 1 0 12 2zm0 18.20c-1.50 0-2.90-.4-4.10-1.10l-.3-.2-3 .8.8-2.90-.2-.3A8.20 8.20 0 1 1 12 20.20zm4.50-6.10c-.2-.1-1.50-.7-1.70-.8-.2-.1-.4-.1-.6.10l-.8 1c-.1.20-.3.20-.5.10a6.70 6.70 0 0 1-3.30-2.90c-.2-.4.2-.4.70-1.30.1-.2 0-.3 0-.5l-.8-1.80c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.10-.7.30-.2.30-.9.90-.9 2.20s.9 2.50 1 2.70c.1.20 1.80 2.80 4.40 3.90 1.60.7 2.30.8 3.10.6.50-.1 1.50-.6 1.70-1.20.2-.6.2-1.10.2-1.20-.1-.1-.2-.2-.5-.3z"/></svg>
+        <a href="https://wa.me/8801314400688"><span class="k">WhatsApp</span><span class="v">+880 1314-400688</span></a>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.90 4.10 2.80 11.40c-1.30.5-1.30 1.30-.2 1.60l4.90 1.50 1.90 5.80c.2.60.1.80.7.80.5 0 .7-.2 1-.5l2.40-2.30 4.90 3.60c.9.50 1.50.2 1.70-.8l3.20-15.10c.3-1.30-.5-1.90-1.40-1.50zM8.50 13.70l9.80-6.20c.5-.3.9-.1.5.2l-8.10 7.30-.3 3.40-1.90-4.70z"/></svg>
+        <a href="https://t.me/surebdadmin"><span class="k">Telegram</span><span class="v">@surebdadmin</span></a>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.20 7 13 7 13s7-7.80 7-13a7 7 0 0 0-7-7zm0 9.50A2.50 2.50 0 1 1 12 6.50a2.50 2.50 0 0 1 0 5z"/></svg>
+        <span><span class="k">Address</span><span class="v">Keshorhat Bazzar<br>Vill: Shehaloy, House: 293<br>Keshorhat, Mohanpur<br>Rajshahi, Rajshahi Division<br>Bangladesh</span></span>
+      </li>
+    </ul>
+  </aside>
 
-  <div class="card">
-    <div class="card-top">
-      <div class="portrait">
-        <div class="portrait-inner">
-          <span class="portrait-mark">FA</span>
-          <!-- photo.jpg এই HTML ফাইলের পাশে রাখুন; না পেলে উপরের "FA" মনোগ্রাম দেখাবে -->
-          <img class="portrait-photo" src="photo.jpg" alt="AD_ Foisal Ahmed"
-               onload="this.classList.add('is-loaded')"
-               onerror="this.remove()">
-        </div>
+  <main>
+    <section class="intro">
+      <h1>AD_FOISAL AHMED NAHID</h1>
+      <p class="role">Android, Flutter &amp; Web Developer</p>
+      <p class="about">I design and build mobile apps and websites that are fast, reliable and easy to use. From a first idea to a finished product, I handle the development end to end.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://wa.me/8801314400688">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.60 15.10L2 22l5-1.30A10 10 0 1 0 12 2zm0 18.20c-1.50 0-2.90-.4-4.10-1.10l-.3-.2-3 .8.8-2.90-.2-.3A8.20 8.20 0 1 1 12 20.20z"/></svg>
+          Message on WhatsApp
+        </a>
+        <a class="btn ghost" href="https://t.me/surebdadmin">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.90 4.10 2.80 11.40c-1.30.5-1.30 1.30-.2 1.60l4.90 1.50 1.90 5.80c.2.60.1.80.7.80.5 0 .7-.2 1-.5l2.40-2.30 4.90 3.60c.9.50 1.50.2 1.70-.8l3.20-15.10c.3-1.30-.5-1.90-1.40-1.50z"/></svg>
+          Chat on Telegram
+        </a>
       </div>
-      <div class="id-text">
-        <p class="id-name">AD_ Foisal Ahmed</p>
-        <p class="id-role">App developer of <strong>Slow Fight</strong></p>
-      </div>
-    </div>
+    </section>
 
-    <div class="hp-rule" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span><span></span>
-    </div>
+    <h3 class="sec">Applications I build</h3>
+    <p class="sec-sub">Four areas of work, each delivered from planning to launch.</p>
+    <ul class="services">
+      <li>
+        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.50" width="12" height="19" rx="2.50"/><path d="M10.50 18.50h3"/></svg></span>
+        <div><h4>Android App Development</h4><p>Native Android apps and games, built for smooth performance and ready to publish on Google Play.</p></div>
+      </li>
+      <li>
+        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 13 3h6L9 13l10 8h-6z"/></svg></span>
+        <div><h4>Flutter App Development</h4><p>Cross-platform apps from a single codebase, with a polished interface on Android and iOS.</p></div>
+      </li>
+      <li>
+        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></span>
+        <div><h4>Web Application Development</h4><p>Interactive web apps with dashboards, logins and databases, working on any phone or computer.</p></div>
+      </li>
+      <li>
+        <span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.50 2.70 3.80 5.70 3.80 9S14.50 18.30 12 21c-2.50-2.70-3.80-5.70-3.80-9S9.50 5.70 12 3z"/></svg></span>
+        <div><h4>Website Design &amp; Development</h4><p>Fast, clean and responsive websites for businesses, brands and personal portfolios.</p></div>
+      </li>
+    </ul>
 
-    <div class="contacts">
-      <a class="contact-row" href="mailto:mdf69309@gmail.com">
-        <span class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4zm16 2.24-7.4 6.47a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24z"/></svg>
-        </span>
-        <span class="contact-text">
-          <span class="contact-label">Email</span>
-          <span class="contact-value">mdf69309@gmail.com</span>
-        </span>
-      </a>
-
-      <a class="contact-row" href="tel:+8801314400688">
-        <span class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
-        </span>
-        <span class="contact-text">
-          <span class="contact-label">Mobile</span>
-          <span class="contact-value">+880 1314-400688</span>
-        </span>
-      </a>
-    </div>
-
-    <div class="tags">
-      <span class="tag">Android developer</span>
-      <span class="tag">Bangladesh</span>
-    </div>
-  </div>
-
-  <section class="note">
-    <h2>Need help?</h2>
-    <p>Bug reports, feature requests, purchase issues or privacy questions about Slow Fight — reach out using the details above. We usually reply within a day.</p>
-  </section>
-
-</main>
-
-<footer>
-  © 2026 AD_ Foisal Ahmed. Slow Fight is an independent game and is not affiliated with Google.
-</footer>
+    <footer>© 2026 AD_FOISAL AHMED NAHID. All rights reserved.</footer>
+  </main>
+</div>
 
 </body>
 </html>
