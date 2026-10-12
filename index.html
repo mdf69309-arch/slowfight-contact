@@ -97,8 +97,8 @@
   <aside>
     <div class="photo">
       <span class="mark">FA</span>
-      <!-- Put your passport-size photo named photo.jpg next to this HTML file -->
-      <img src="photo.jpg" alt="AD_FOISAL AHMED NAHID" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+      <!-- Photo file: photo.png (falls back to photo.jpg) next to this HTML file -->
+      <img src="photo.png" alt="AD_FOISAL AHMED NAHID" onload="this.classList.add('is-loaded')" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='photo.jpg'}else{this.remove()}">
     </div>
 
     <h2>Contact</h2>
